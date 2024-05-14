@@ -1,0 +1,25 @@
+import { Response, Request } from "express";
+
+import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
+
+class CreateCategoryController {
+    private createCategoryUseCase: CreateCategoryUseCase
+    constructor(createCategoryUseCase: CreateCategoryUseCase) {
+        this.createCategoryUseCase = createCategoryUseCase;
+    }
+
+    handle(req: Request, res: Response): Response {
+        const { name, description } = req.body;
+
+
+        this.createCategoryUseCase.execute({ name, description })
+
+        return res.status(201).send();
+
+    }
+
+}
+
+
+
+export { CreateCategoryController };
