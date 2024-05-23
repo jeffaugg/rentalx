@@ -7,9 +7,7 @@ class ImportCategoryController {
 
     constructor(importCategoryUseCase: ImportCategoryUseCase) {
         this.importCategoryUseCase = importCategoryUseCase;
-
     }
-
 
     handle(req: Request, res: Response): Response {
         const { file } = req;
@@ -18,9 +16,6 @@ class ImportCategoryController {
 
         return res.send();
     }
-
-
 }
-
 
 export { ImportCategoryController };

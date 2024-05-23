@@ -1,9 +1,5 @@
 import { Category } from "../../model/Categoty";
-import { CategoriesRepository } from "../../repositories/implementations/CategoriesRepository";
 import { ICategoriesRepository } from "../../repositories/ICategoriesRepository";
-
-
-
 
 class ListCategoryUseCase {
     private categoriesRepository: ICategoriesRepository;
@@ -16,6 +12,5 @@ class ListCategoryUseCase {
         return categories;
     }
 }
-
 
 export { ListCategoryUseCase };
