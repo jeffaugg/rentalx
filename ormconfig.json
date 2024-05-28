@@ -6,7 +6,7 @@
     "password": "rentx",
     "database": "rentx",
     "entities": [
-        "./src/database/entity/*.ts"
+        "./src/modules/books/entity/*.ts"
     ],
     "migrations": [
         "./src/database/migration/*.ts"
@@ -14,4 +14,4 @@
     "cli": {
         "migrationsDir": "./src/database/migration"
     }
-}               
+}

@@ -1,24 +1,26 @@
 import { Router } from "express";
-import { createCategoryController } from "../modules/books/useCases/createCategory";
-import { listCategoriesController } from "../modules/books/useCases/listCategories";
-import { importCategoryController } from "../modules/books/useCases/importCategories";
+import { CreateCategoryController } from "../modules/books/useCases/createCategory/CreateCategoryController";
+import { ImportCategoryController } from "../modules/books/useCases/importCategories/ImportCategoryController";
+import { ListCategoriesController } from "../modules/books/useCases/listCategories/ListCategoriesController";
+
 import multer from "multer";
+const createCategoryController = new CreateCategoryController();
+const importCategoryController = new ImportCategoryController();
+const listCategoriesController = new ListCategoriesController();
 
 const categoriesRoutes = Router();
 const upload = multer({
     dest: "./tmp", // cria um arquivo na raiz do projeto rentalx
 });
 
-categoriesRoutes.post("/", (req, res) => {
-    return createCategoryController.handle(req, res);
-});
+categoriesRoutes.post("/", createCategoryController.handle);
 
-categoriesRoutes.get("/", (req, res) => {
-    return listCategoriesController.handle(req, res);
-});
+categoriesRoutes.get("/", listCategoriesController.handle);
 
-categoriesRoutes.post("/import", upload.single("file"), (req, res) => {
-    return importCategoryController.handle(req, res);
-});
+categoriesRoutes.post(
+    "/import",
+    upload.single("file"),
+    importCategoryController.handle,
+);
 
 export { categoriesRoutes };

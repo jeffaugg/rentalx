@@ -1,17 +1,18 @@
-import "reflect-metadata";
-import { DataSource } from "typeorm";
-import { User } from "./src/database/entity/User";
+// import "reflect-metadata";
+// import { DataSource } from "typeorm";
 
-export const AppDataSource = new DataSource({
-    type: "postgres",
-    host: "localhost",
-    port: 5432,
-    username: "test",
-    password: "test",
-    database: "test",
-    synchronize: true,
-    logging: false,
-    entities: [User],
-    migrations: [],
-    subscribers: [],
-});
+// const AppDataSource = new DataSource({
+//     type: "postgres",
+//     host: "localhost",
+//     port: 5432,
+//     username: "docker",
+//     password: "rentx",
+//     database: "rentx",
+//     synchronize: true,
+//     logging: false,
+//     entities: ["./src/modules/books/entity/*.ts"],
+//     migrations: ["./src/database/migration/*.ts"],
+//     subscribers: [],
+// });
+
+// export { AppDataSource };

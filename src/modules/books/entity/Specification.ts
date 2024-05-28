@@ -1,9 +1,15 @@
 import { v4 as uuid4 } from "uuid";
+import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
 
-class Category {
+@Entity("specifications")
+class Specification {
+    @PrimaryColumn()
     id?: string; //coloca como opcional o construtor cria o id
+    @Column()
     name: string;
+    @Column()
     description: string;
+    @CreateDateColumn()
     created_at?: Date;
 
     constructor() {
@@ -14,4 +20,4 @@ class Category {
     }
 }
 
-export { Category };
+export { Specification };
