@@ -1,15 +1,15 @@
-    FROM node 
+FROM node:20.12.2
 
-    WORKDIR /usr/app
+WORKDIR /usr/app
 
-    COPY package*.json ./
+COPY package*.json ./
 
-    RUN npm install
+RUN npm install
 
-    COPY . .
+COPY . .
 
-    EXPOSE 3333
+EXPOSE 3333
 
-    CMD [ "npm", "run", "dev" ]
+CMD [ "npm", "run", "dev" ]
 
 

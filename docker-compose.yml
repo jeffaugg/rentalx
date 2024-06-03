@@ -8,9 +8,9 @@ services:
     ports: 
       - 127.0.0.1:5432:5432
     environment:
-      - POSTGRES_USER=docker
-      - POSTGRES_PASSWORD=rentx
-      - POSTGRES_DB=rentx
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: rentx
+      POSTGRES_DB: rentx
     volumes:
       - pgdata:/var/lib/postgresql/data
 
@@ -21,6 +21,12 @@ services:
       - 3333:3333
     volumes:
       - .:/usr/app
+      - /usr/app/node_modules
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+    depends_on:
+      - database_rentx
 
 volumes:
   pgdata:
+  node_modules:
