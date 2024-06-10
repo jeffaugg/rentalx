@@ -1,9 +1,9 @@
-import { Router } from "express";
-import { CreateCategoryController } from "../modules/books/useCases/createCategory/CreateCategoryController";
-import { ImportCategoryController } from "../modules/books/useCases/importCategories/ImportCategoryController";
-import { ListCategoriesController } from "../modules/books/useCases/listCategories/ListCategoriesController";
-
 import multer from "multer";
+import { CreateCategoryController } from "../../../../modules/books/useCases/createCategory/CreateCategoryController";
+import { ImportCategoryController } from "../../../../modules/books/useCases/importCategories/ImportCategoryController";
+import { ListCategoriesController } from "../../../../modules/books/useCases/listCategories/ListCategoriesController";
+import { Router } from "express";
+
 const createCategoryController = new CreateCategoryController();
 const importCategoryController = new ImportCategoryController();
 const listCategoriesController = new ListCategoriesController();

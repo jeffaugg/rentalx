@@ -6,8 +6,8 @@
     "password": "rentx",
     "database": "rentx",
     "entities": [
-        "./src/modules/books/entity/*.ts",
-        "./src/modules/accounts/entity/*.ts"
+        "./src/modules/books/infra/typeorm/entity/*.ts",
+        "./src/modules/accounts/infra/typeorm/entity/*.ts"
     ],
     "migrations": [
         "./src/database/migration/*.ts"
