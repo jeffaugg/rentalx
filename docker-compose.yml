@@ -6,13 +6,15 @@ services:
     container_name: database_rentx
     restart: always
     ports: 
-      - 127.0.0.1:5432:5432
+      - 5432:5432
     environment:
       POSTGRES_USER: docker
       POSTGRES_PASSWORD: rentx
       POSTGRES_DB: rentx
     volumes:
       - pgdata:/var/lib/postgresql/data
+    networks:
+      - rentx-network
 
   app:
     build: .
@@ -26,7 +28,13 @@ services:
       CHOKIDAR_USEPOLLING: "true"
     depends_on:
       - database_rentx
+    networks:
+      - rentx-network
 
 volumes:
   pgdata:
   node_modules:
+
+networks:
+  rentx-network:
+    driver: bridge
