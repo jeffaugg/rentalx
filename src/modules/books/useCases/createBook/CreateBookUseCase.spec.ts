@@ -29,7 +29,7 @@ describe("Create Book", () => {
             description: "descriptionTest",
             fine_amount: 60,
         });
-        console.log(book);
-        expect(book.availabe).toBe(true);
+
+        expect(book.available).toBe(true);
     });
 });
