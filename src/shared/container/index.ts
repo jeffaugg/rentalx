@@ -9,6 +9,8 @@ import { IUserRepostory } from "../../modules/accounts/repositories/IUserReposit
 import { UserRepository } from "../../modules/accounts/infra/typeorm/repositories/UserRepository";
 import { IBooksRepository } from "../../modules/books/repositories/IBooksRepository";
 import { BookRepository } from "../../modules/books/infra/typeorm/repositories/BookRepository";
+import { IBookImageRepository } from "../../modules/books/repositories/IBookImageRepository";
+import { BookImageRepository } from "../../modules/books/infra/typeorm/repositories/BookImageRepository";
 
 container.registerSingleton<ICategoriesRepository>(
     "CategoriesRepository", //name
@@ -23,3 +25,8 @@ container.registerSingleton<ISpecificationsRepository>(
 container.registerSingleton<IUserRepostory>("UserRepository", UserRepository);
 
 container.registerSingleton<IBooksRepository>("BookRepository", BookRepository);
+
+container.registerSingleton<IBookImageRepository>(
+    "BooksImagesRepository",
+    BookImageRepository,
+);
