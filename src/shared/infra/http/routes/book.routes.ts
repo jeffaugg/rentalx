@@ -37,8 +37,8 @@ bookRoutes.post(
 
 bookRoutes.post(
     "/images/:id",
-    // ensureAuthenticated,
-    // ensureAdmin,
+    ensureAuthenticated,
+    ensureAdmin,
     upload.array("images"),
     uploadBookImageController.handle,
 );

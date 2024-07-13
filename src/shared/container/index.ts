@@ -1,4 +1,5 @@
 import { container } from "tsyringe";
+import "./providers";
 import { ICategoriesRepository } from "../../modules/books/repositories/ICategoriesRepository";
 import { CategoriesRepository } from "../../modules/books/infra/typeorm/repositories/CategoriesRepository";
 
@@ -11,9 +12,11 @@ import { IBooksRepository } from "../../modules/books/repositories/IBooksReposit
 import { BookRepository } from "../../modules/books/infra/typeorm/repositories/BookRepository";
 import { IBookImageRepository } from "../../modules/books/repositories/IBookImageRepository";
 import { BookImageRepository } from "../../modules/books/infra/typeorm/repositories/BookImageRepository";
+import { IRentalRepository } from "../../modules/rentals/repositories/IRentalsRepository";
+import { RentalsRepository } from "../../modules/rentals/infra/typeorm/repositories/RentalsRepository";
 
 container.registerSingleton<ICategoriesRepository>(
-    "CategoriesRepository", //name
+    "CategoriesRepository",
     CategoriesRepository,
 );
 
@@ -29,4 +32,9 @@ container.registerSingleton<IBooksRepository>("BookRepository", BookRepository);
 container.registerSingleton<IBookImageRepository>(
     "BooksImagesRepository",
     BookImageRepository,
+);
+
+container.registerSingleton<IRentalRepository>(
+    "RentalsRepository",
+    RentalsRepository,
 );

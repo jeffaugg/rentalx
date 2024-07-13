@@ -6,8 +6,7 @@
     "password": "rentx",
     "database": "rentx",
     "entities": [
-        "./src/modules/books/infra/typeorm/entity/*.ts",
-        "./src/modules/accounts/infra/typeorm/entity/*.ts"
+        "./src/modules/*/infra/typeorm/entity/*.ts"
     ],
     "migrations": [
         "./src/shared/infra/typeorm/migration/*.ts"
@@ -16,4 +15,3 @@
         "migrationsDir": "./src/shared/infra/typeorm/migration"
     }
 }
-    
