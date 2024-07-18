@@ -11,7 +11,7 @@ export class CreateSpecificationBook1719087351897
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: " ",
+                name: "specification_books",
                 columns: [
                     {
                         name: "book_id",
